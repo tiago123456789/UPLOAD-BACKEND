@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 
@@ -10,6 +11,9 @@ const routesApp = require("../routes");
 
 // Set connection database.
 require("./Database");
+
+// Middleware enable cors on app.
+app.use(cors());
 
 // Middleware do parse data to json.
 app.use(express.json());
